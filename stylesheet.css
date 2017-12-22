@@ -1,13 +1,13 @@
-#body{
+#body {
 	padding: 20px;
-	min-height: 100vh;
+	background: #DDDDDD;
 }
 
-.footer{
+.footer {
 	background: #222222;
 }
 
-.footer > nav{
+.footer > nav {
 	margin-bottom: 0px;
 	font-size: 32px;
 }
@@ -20,4 +20,8 @@
 
 .footer > .navbar {
   text-align: center;
+}
+
+.content {
+	min-height: 85vh;
 }
