@@ -1,20 +1,11 @@
 #body {
-	padding: 2vw;
+	padding: 2vh;
 	background: #DDDDDD;
-	min-height: 100vh;
-}
-
-.footer {
-	background: #222222;
 }
 
 .footer > nav {
 	margin-bottom: 0px;
 	font-size: 32px;
-	position: absolute;
-	bottom: 2vw;
-	right: 2vw;
-	left: 2vw;
 }
 
 .navbar .navbar-nav {
@@ -29,4 +20,8 @@
 
 a {
 	color: black;
+}
+
+.well {
+	min-height: 77vh;
 }
