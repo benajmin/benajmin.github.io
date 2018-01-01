@@ -27,6 +27,6 @@
   text-align: center;
 }
 
-/*.content {
-	min-height: 85vh;
-}*/
+a {
+	color: black;
+}
