@@ -22,6 +22,10 @@
 	min-height: 77vh;
 }
 
-.img-thumbnail{
+.img-thumbnail {
 	margin: 1vh;
+}
+
+h1 > a {
+	color: black;
 }
