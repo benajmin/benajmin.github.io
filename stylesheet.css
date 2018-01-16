@@ -29,3 +29,13 @@
 h1 > a {
 	color: black;
 }
+
+.row {
+	padding: 2vh;
+}
+
+.img-border {
+	border: 3px;
+	border-color: black;
+	border-style: solid;
+}
