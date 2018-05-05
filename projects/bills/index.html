@@ -9,29 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	</head>
 	
 	<body>
 		<div class="container-fluid" id = "body">
-			<nav class="navbar navbar-inverse" >
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="collapse navbar-collapse" id="navbar">
-						<ul class="nav navbar-nav">
-							<li><a href="../../index.html">Benjamin Wilkins</a></li>
-							<li class="active"><a href="../index.html">Projects</a></li>
-							<li><a href="../../WilkinsResume.pdf">Resume</a></li>
-							<li><a href="../../contact/index.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
+			<div id="nav-placeholder"></div>
 			<div class= "content well">
 				<h1>The Average Bill</h1>
 				<h6>November 2017</h6>
@@ -44,16 +27,15 @@
 				
 				<p> It's also interesting to note that by doing this we also get the average face of many Canadian historical figured</p>
 			</div>
-		
-			<footer class="footer">
-				<nav class="navbar navbar-inverse">
-					<ul class="nav navbar-nav">
-						<li><a href="https://github.com/benajmin"><i class="fa fa-github"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/benjaminwilkins99/"><i class="fa fa-linkedin"></i></a></li>
-					</ul>
-				</nav>
-			</footer>
 		</div>
 		
+		<script>
+		$(function(){
+			  $("#nav-placeholder").load("navbar.html");
+		});
+		$(function(){
+			  $("#foot-placeholder").load("footer.html");
+		});
+		</script>
 	</body>
 </html> 
