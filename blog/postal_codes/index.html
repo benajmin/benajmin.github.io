@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Benjamin Wilkins</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	
+	<body>
+		<div class="container-fluid" id = "body">
+			<div id="nav-placeholder"></div>
+			<div class= "content well">
+				<h1><a href="https://github.com/benajmin/scout-map/blob/master/postal_code.py">Producing a List of Valid Canadian Postal Codes</a></h1>
+				<h6>October 2018</h6>
+
+        <p>Recently, for a project that I hope will be up here soon I needed a list of Canadian postal codes. One would expect this to be an easy task but it turned out to be quite the opposite.</p>
+
+        <p>Apparently Canada Post keeps postal codes as proprietary information, as they sell their data sets to companies who use it for advertising. These data sets go for about $600 a year, and contain a list of postal codes and their geographic boundaries.</p>
+        
+        <p>Now it's simple enough to generate a list of postal codes based on the basic rules, but this gives you approximately 8 million variations: 10 times as many as are actually in use by Canada Post. But we can do better than that. A bit of searching shows that <a href="http://download.geonames.org/export/dump/">geonames.org</a> offers a list of all valid 3 character postal code prefixes, as well as their approximate geographic location. This narrows it down to about 3 million possibilities: much better nut still nowhere near the 850 000 wikipedia claims are in use.</p>
+
+        <p>From there I noticed that <a href=http://www.canada411.ca/postal-code-lookup/>Canada 411</a> offers a reverse postal code lookup. This offers a simple way to check if a postal code is valid or not. A quick python script later and we have a way of automatically checking validity. Some quick calculations show this will take way too long to run, but this was significantly cut down by using grequests to multithread the requests, sending 75 at once. The script ran into some errors, but some careful logging and rerunning took care of those. It's certainly no where near perfect, and needed to be restarted a few times, but with some adjustment it produced a list of 770 000 valid postal codes.</p>
+
+        <p> Wait a second! 770 000? But wikipedia said there were 850 000. Let's take a look at where that number comes from. Wikipedia cites <a href="https://greatdata.com/product/3/canada-post-geo">greatdata.com</a> who sell a postal code database claiming to have 855 000 records. Seems simple enough. But they also over the CanadaPlus database which lists unofficial city names and contains 1.2 million records. Which leads us to believe that records are some combination of postal codes and cities. Therefore there may not be a one-to-one correspondance between records and postal codes and our list may very well be complete </p>
+
+        <p> While I do strongly believe that postal code data should be publicly available, it was certaintly an adventure and a learning opportunity trying to generate it for myself</p>
+				
+			</div>
+			<div id="foot-placeholder"></div>
+		</div>
+		
+		<script>
+		$(function(){
+			  $("#nav-placeholder").load("../../navbar.html");
+		});
+		$(function(){
+			  $("#foot-placeholder").load("../../footer.html");
+		});
+		</script>
+	</body>
+</html> 
